@@ -43,3 +43,9 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
+
+
+Another link to install kubernetes on RHEL
+
+https://www.tecmint.com/install-kubernetes-cluster-on-centos-7/
+
