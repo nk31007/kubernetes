@@ -1,0 +1,19 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: nagpv
+  labels:
+    type: nfs
+spec:
+  storageClassName: slow
+  capacity: 
+    storage: 1Gi
+  accessModes:
+   - ReadWriteMany
+  volumeMode: Filesystem
+  mountOptions:
+   - hard
+  nfs:
+    server: 172.31.36.40
+    path: /
+

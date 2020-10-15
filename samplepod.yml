@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nagsamplepod
+spec:
+  containers:
+   - name: nagsamplepod
+     image: nginx
+     env:
+      - name: DemoGreeting
+        value: "My self Nageswara rao"
+      - name: village
+        value: "ReddyPalem"
+     volumeMounts:
+       - name: nagvolume
+         mountPath: /apps
+  volumes:
+   - name: nagvolume
+     emptyDir: {}
+ 
