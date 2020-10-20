@@ -1,0 +1,14 @@
+kind: LimitRange
+apiVersion: v1
+metadata:
+  name: naglrd
+  namespace: nagdev
+  labels:
+    name: nsdlrd
+spec:
+  limits:
+   - max: 
+       cpu: "800m"
+     min:
+       cpu: "200m"
+     type: Container
