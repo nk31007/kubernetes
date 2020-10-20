@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nagdep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+       - name: tomcatapp
+         image: tomcat:8
+         volumeMounts:
+              - name: nagv
+                mountPath: /apps
+      volumes:
+       - name: nagv
+         persistentVolumeClaim:
+           claimName: myclaim
+

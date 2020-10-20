@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: naglb
+spec:
+  type: LoadBalancer
+  selector:
+    app: web
+  ports:
+   - port: 80
+     targetPort: 8080
+     protocol: TCP
